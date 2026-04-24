@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dumisani Malindi | Portfolio</title>
+
+    <!-- Robotic Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+		<div class="robot">🤖</div>
+
+
+    <!-- Navigation -->
+		<nav class="navbar">
+
+		<!-- LEFT: ICON + NAME -->
+		<div class="brand bounce-brand">
+			<span class="icon">💻</span>
+			<span class="name">Hey Welcome to my page</span>
+			
+		</div>
+
+		<!-- RIGHT: LINKS -->
+		<ul class="nav-links">
+			<li><a href="#about">About</a></li>
+			<li><a href="#projects">Projects</a></li>
+			<li><a href="#contact">Contact Me</a></li>
+		</ul>
+
+	</nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+		<div class="profile-pic glow-profile">
+			<img src="me.png" alt="Profile picture">
+		</div>
+
+
+<h1 class="crumble-text">
+  <span>D</span><span>u</span><span>m</span><span>i</span><span>s</span><span>a</span><span>n</span><span>i</span>
+  <span>&nbsp;</span>
+  <span>E</span><span>l</span><span>t</span><span>o</span><span>n</span>
+  <span>&nbsp;</span>
+  <span>M</span><span>a</span><span>l</span><span>i</span><span>n</span><span>d</span><span>i</span>
+</h1>
+	
+	<p>Motivated IT graduate with internship experience in Database Administration at E-Government, skilled in managing and maintaining
+to ensure data integrity and supporting system performance. Experienced in data capturing and technical support, with strong
+attention to detail and problem-solving abilities. With an excellent academic performance and a proactive approach to continous
+learning.</p>
+
+		
+			<a href="links/cv.pdf"
+				 class="cv-button"
+				 target="_blank"
+				 rel="noopener">
+				 📄 View CV
+			  </a>
+
+
+    </section>
+
+<div class="sections-container">
+
+    <section id="about" class="section-card">
+        <h2>Experience</h2>
+        <p>
+            I am a passionate candidate who is dedicated, I have worked in Department of E-Government where I was a Database Administrator Intern and I have gained hands-on 
+				skills, I worked with platforms like SQL Server Management to perform tasks like server management. I also worked at the Department of Health Kopanong Hospital
+				as a Data Analyst/Capturer, I managed and cleaned data for accuracy.
+			
+        </p>
+    </section>
+
+<section id="projects" class="section-card">
+  <h2>Projects</h2>
+
+  <div class="projects-grid">
+
+    <div class="project-item">
+      <img src="images/login.png" alt="Login Page">
+      <h3>Login Page</h3>
+    </div>
+
+    <div class="project-item">
+      <img src="images/health.png" alt="Health Project">
+      <h3>Health</h3>
+    </div>
+
+
+
+  </div>
+</section>
+``
+
+    <section id="contact" class="section-card contact-card">
+
+    <h2 class="contact-title">CONTACT ME</h2>
+    <p class="contact-subtitle">
+        I’ll be glad to answer your questions
+    </p>
+
+    <form class="contact-form">
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email address" required>
+        <input type="text" placeholder="Subject">
+        <textarea placeholder="Your message" rows="4"></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+
+</section>
+
+</div>
+
+	<!-- Snow Particles -->
+<div class="snow-container"></div>
+
+    <!-- Contact Section -->
+
+	<script>
+    const snowContainer = document.querySelector('.snow-container');
+
+    function createSnow() {
+        const snow = document.createElement('div');
+        snow.classList.add('snow');
+
+        snow.style.left = Math.random() * 100 + 'vw';
+        snow.style.animationDuration = (3 + Math.random() * 5) + 's';
+        snow.style.opacity = Math.random();
+
+        snowContainer.appendChild(snow);
+
+        setTimeout(() => {
+            snow.remove();
+        }, 8000);
+    }
+
+    setInterval(createSnow, 150);
+</script>
+``
+	<script>
+    let lastScrollY = window.scrollY;
+    const navbar = document.querySelector('.navbar');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > lastScrollY && window.scrollY > 100) {
+            // scrolling down
+            navbar.classList.add('hide');
+        } else {
+            // scrolling up
+            navbar.classList.remove('hide');
+        }
+        lastScrollY = window.scrollY;
+    });
+</script>
+		
+		<footer class="footer">
+    <div class="social-container">
+
+        <div class="social-box">
+            <span class="social-icon">📘</span>
+            <div class="social-text">
+                <strong>Facebook</strong>
+                <span>facebook.com/yourname</span>
+            </div>
+        </div>
+
+        <div class="social-box">
+            <span class="social-icon">💼</span>
+            <div class="social-text">
+                <strong>LinkedIn</strong>
+                <span>www.linkedin.com/in/dumisani-malindi-782216253</span>
+            </div>
+        </div>
+
+        <div class="social-box">
+            <span class="social-icon">💬</span>
+            <div class="social-text">
+                <strong>WhatsApp</strong>
+                <span>0781169094</span>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+
+	<script>
+    const cards = document.querySelectorAll('.section-card');
+    let currentIndex = 0;
+
+    setInterval(() => {
+        // Remove auto-hover from all cards
+        cards.forEach(card => card.classList.remove('auto-hover'));
+
+        // Add auto-hover to current card
+        cards[currentIndex].classList.add('auto-hover');
+
+        // Move to next card
+        currentIndex = (currentIndex + 1) % cards.length;
+
+    }, 2000); // ✅ 2 seconds
+</script>
+
+		<script>
+const letters = document.querySelectorAll('.crumble-text span');
+
+letters.forEach(letter => {
+  const fall = Math.random() * 40 + 'px';      // how far it drops
+  const rotate = (Math.random() * 40 - 20) + 'deg'; // rotation
+
+  letter.style.setProperty('--fall', fall);
+  letter.style.setProperty('--rotate', rotate);
+});
+</script>
+``
+	
+
+</body>
+</html>
+``
