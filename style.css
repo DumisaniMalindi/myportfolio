@@ -1,0 +1,941 @@
+/* ===============================
+   GLOBAL RESET & BASE STYLES
+   =============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+
+    /* 3 STEP DIAGONAL BACKGROUND */
+    background: linear-gradient(
+        135deg,
+        #708090 0%,
+        #708090 33%,
+
+        #b2beb5 33%,
+        #b2beb5 66%,
+
+        #708090 66%,
+        #708090 100%
+    );
+}
+
+/* ===============================
+   NAVIGATION
+   =============================== */
+
+/* ===============================
+   TOP NAVBAR
+   =============================== */
+
+.navbar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 60px;
+    z-index: 10;
+
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* HIDDEN STATE */
+.navbar.hide {
+    transform: translateY(-120%);
+    opacity: 0;
+}
+
+/* BRAND (LEFT) */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.brand .icon {
+    font-size: 18px;
+}
+
+/* NAV LINKS (RIGHT) */
+/* NAV LINKS (RIGHT SIDE) */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+
+    /* ✅ THIS IS THE PART YOU WANT BACK */
+    background: rgba(0, 0, 0, 0.15);
+    padding: 12px 24px;
+    border-radius: 12px;
+}
+``
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00eaff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #00eaff;
+}
+
+/* ===============================
+   HERO / HOME SECTION
+   =============================== */
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 70px;
+    margin-top: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    opacity: 0.85;
+	
+	
+    max-width: 1100px;          /* ✅ controls line length */
+    padding: 0 20px;           /* ✅ prevents edge overflow */
+    white-space: normal;       /* ✅ allows wrapping */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.6;
+
+	
+}
+
+/* ===============================
+   PROFILE IMAGE
+   =============================== */
+
+.profile-pic img {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    border: 4px solid #708090;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+/* ===============================
+   SECTION CARD CONTAINERS
+   =============================== */
+
+.section-card {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 15px;
+
+
+  flex: 1;
+    min-width: 280px;
+
+    min-height: 260px;  /* ✅ KEY LINE */
+    padding: 40px;
+
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+
+    display: flex;              /* ✅ centers content nicely */
+    flex-direction: column;
+    justify-content: flex-start;
+	align-items: center;
+	
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        background-color 0.35s ease;
+}
+	/* ABOUT CARD */
+.sections-container .section-card:nth-child(1) {
+    background: #708090 ;
+}
+
+/* PROJECTS CARD */
+.sections-container .section-card:nth-child(2) {
+    background: #b2beb5 ;
+}
+
+/* CONTACT CARD */
+.sections-container .section-card:nth-child(3) {
+    background: #708090;
+}
+``
+
+
+/* ✅ HOVER EFFECT */
+.section-card:hover,
+	.section-card.auto-hover{
+    transform: translateY(-12px);
+    background-color: rgba(255, 255, 255, 0.16);
+    box-shadow:
+        0 25px 50px rgba(0, 234, 255, 0.35),
+        0 0 20px rgba(0, 234, 255, 0.25);
+}
+
+/* ===============================
+   SECTION TEXT
+   =============================== */
+
+.section-card h2 {
+	 margin-top: 0;
+    font-size: 28px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.section-card p,
+.section-card li {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Remove default list styles */
+.section-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section-card li {
+    margin: 10px 0;
+}
+
+/* ===============================
+   SNOW / PARTICLE EFFECT
+   =============================== */
+
+.snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+
+.snow {
+    position: absolute;
+    top: -10px;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+    }
+}
+
+	 .sections-container {
+    max-width: 900px;
+    margin: 120px auto 0 auto;
+    padding: 60px 20px;
+	
+	display: flex;   	/* ✅ MAKES IT HORIZONTAL */
+	gap: 40px;                  /* space between cards */
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: stretch;
+
+	
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 30px;
+}
+
+	/* ICONS FOR SECTION HEADINGS */
+.sections-container .section-card h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* ABOUT ICON */
+.sections-container .section-card:nth-child(1) h2::before {
+    content: "💼";
+}
+
+/* PROJECTS ICON */
+.sections-container .section-card:nth-child(2) h2::before {
+    content: "📂";
+}
+
+/* CONTACT ICON */
+.sections-container .section-card:nth-child(3) h2::before {
+    content: "📧";
+}
+/* ===============================
+   FOOTER
+   =============================== */
+
+.footer {
+    margin-top: 120px;
+    padding: 60px 20px;
+}
+
+/* SOCIAL CONTAINER */
+.social-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* EACH SOCIAL BOX */
+.social-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 20px 30px;
+    min-width: 260px;
+
+    /*border: 2px solid white;*/
+    border-radius: 16px;
+
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.social-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.25);
+}
+
+/* ICON */
+.social-icon {
+    font-size: 28px;
+}
+
+/* TEXT */
+.social-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.social-text strong {
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+.footer {
+    margin-top: 120px;
+    padding: 60px 20px;
+    position: relative;
+}
+
+/* SOLID WHITE LINE */
+.footer::before {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 2px;
+    background: white;
+    margin: 0 auto 50px auto;
+}
+		/* ===============================
+   CONTACT FORM STYLING
+   =============================== */
+
+.contact-card {
+    background: #3c4a57;
+}
+
+/* TITLE */
+.contact-title {
+    font-size: 36px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+/* SUBTITLE */
+.contact-subtitle {
+    font-size: 14px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* FORM */
+.contact-form {
+    width: 100%;
+    max-width: 500px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* INPUTS */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+
+    background: #f2f2f2;
+    border: none;
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+}
+
+/* BUTTON */
+.contact-form button {
+    align-self: flex-start;
+
+    margin-top: 10px;
+    padding: 8px 16px;
+
+    background: white;
+    color: black;
+    border: none;
+
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #e0e0e0;
+}
+
+
+/* ===============================
+   MOBILE RESPONSIVE STYLES
+   =============================== */
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+    .navbar {
+        top: 20px;
+        padding: 0 20px;
+    }
+
+    .brand {
+        font-size: 14px;
+    }
+
+    .nav-links {
+        padding: 8px 14px;
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    /* HERO SECTION */
+    .hero {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .profile-pic {
+        margin-top: 30px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    /* SECTIONS CONTAINER */
+    .sections-container {
+        padding: 40px 15px;
+        margin-top: 80px;
+    }
+
+    /* SECTION CARDS */
+    .section-card {
+        min-height: auto;
+        padding: 30px 20px;
+    }
+
+    .section-card h2 {
+        font-size: 22px;
+    }
+
+    /* CONTACT FORM */
+    .contact-form {
+        max-width: 100%;
+    }
+
+    .contact-title {
+        font-size: 26px;
+    }
+
+    /* FOOTER */
+    .social-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .social-box {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+}
+	.section-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+
+/* NAME AUTO HOVER ANIMATION */
+.name-hover {
+    display: inline-block;
+    animation: namePulse 2s infinite ease-in-out;
+}
+
+/* Hover-style animation */
+@keyframes namePulse {
+    0% {
+        transform: translateY(0);
+        text-shadow: none;
+    }
+    50% {
+        transform: translateY(-6px);
+        text-shadow: 0 0 15px #555555;
+    }
+    100% {
+        transform: translateY(0);
+        text-shadow: none;
+    }
+}
+	/* ===============================
+   MOVING ROBOT
+   ============================== */
+
+.robot {
+    position: fixed;
+    top: 10%;
+    left: 10%;
+
+    font-size: 28px;
+    z-index: 3;                 /* above snow, below main UI */
+    pointer-events: none;       /* robot never blocks clicks */
+
+    animation: robotMove 20s linear infinite, float 2s ease-in-out infinite;
+}
+
+/* Robot movement path */
+@keyframes robotMove {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(70vw, 10vh);
+    }
+    50% {
+        transform: translate(60vw, 70vh);
+    }S
+    75% {
+        transform: translate(10vw, 60vh);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+	@media (max-width: 768px) {
+    .robot {
+        display: none;
+    }
+}
+	/* ===============================
+   TRAIN ANIMATION FOR BRAND
+   =============================== */
+
+.train-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    white-space: nowrap;      /* keeps icon + name together */
+    position: relative;
+    overflow: hidden;
+
+    animation: brandTrain 12s linear infinite;
+}
+
+/* Train movement */
+@keyframes brandTrain {
+    0% {
+        transform: translateX(-120%);
+    }
+    100% {
+        transform: translateX(120%);
+    }
+}
+	@media (max-width: 600px) {
+    .train-brand {
+        animation: none;
+        transform: none;
+    }
+}
+
+
+	/* ===============================
+   BOUNCE ANIMATION FOR BRAND
+   =============================== */
+
+.bounce-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    animation: brandBounce 1.2s ease-in-out infinite;
+}
+
+/* Bounce keyframes */
+@keyframes brandBounce {
+    0% {
+        transform: translateY(0);
+		 text-shadow: none;
+    }
+    50% {
+        transform: translateY(-6px);
+		text-shadow: 0 0 8px  black;
+    }
+    100% {
+        transform: translateY(0);
+		 text-shadow: none;
+    }
+}
+	
+/* ===============================
+   PROJECTS GRID (INSIDE PROJECTS CARD)
+   =============================== */
+
+.projects-grid {
+	display: grid;
+
+	grid-template-columns: repeat(2, 1fr); /* ✅ ALWAYS 2 columns */
+	gap: 40px;                                        /* ✅ MORE SPACE */
+
+	width: 100%;
+	margin-top: 40px;
+
+}
+
+.project-item {
+    padding: 24px;
+    border-radius: 12px;
+	gap:18px
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    font-size: 14px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.project-item {
+    padding: 16px;
+    border-radius: 12px;
+
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    font-size: 14px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.project-item img {
+    width: 100%;
+    height: 140px;
+
+    object-fit: cover;
+    border-radius: 10px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.project-item h3 {
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+.project-item:hover img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.project-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* ===============================
+   CRUMBLE NAME EFFECT
+   =============================== */
+
+.crumble-name {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.crumble-name span {
+    display: inline-block;
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease,
+        filter 0.4s ease;
+}
+
+/* CRUMBLE ON HOVER */
+.crumble-name:hover span {
+    animation: crumble 0.2s ease-in-out forwards;
+}
+
+/* STAGGER EFFECT (each letter breaks slightly differently) */
+.crumble-name:hover span:nth-child(even) {
+    transform: translateY(10px) rotate(8deg);
+}
+
+.crumble-name:hover span:nth-child(odd) {
+    transform: translateX(-10px) rotate(-8deg);
+}
+
+/* KEYFRAMES */
+@keyframes crumble {
+    0% {
+        transform: translate(0, 0) rotate(0);
+        opacity: 1;
+        filter: blur(0);
+    }
+    100% {
+        opacity: 0.3;
+        filter: blur(1.5px);
+    }
+}
+
+	/* ===============================
+   REAL CRUMBLE TEXT EFFECT
+   =============================== */
+
+.crumble-text {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.crumble-text span {
+    display: inline-block;
+    transition:
+        transform 0.6s ease,
+        opacity 0.6s ease;
+    will-change: transform;
+}
+
+/* Hover = crumble */
+.crumble-text:hover span {
+    transform:
+        translateY(calc(20px + var(--fall)))
+        rotate(var(--rotate));
+    opacity: 0.35;
+}
+
+/* ===============================
+   PROFILE IMAGE GLOW HOVER
+   =============================== */
+
+.glow-profile {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+}
+
+/* IMAGE */
+.glow-profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+/* GLOW RING */
+.glow-profile::before {
+    content: "";
+    position: absolute;
+    inset: -8px;                 /* thickness of border */
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #b2beb5,
+      #b2beb5
+    );
+
+    opacity: 0;
+    filter: blur(10px);
+    transition: opacity 0.4s ease;
+
+    z-index: 1;
+}
+
+/* SOLID NEON EDGE */
+.glow-profile::after {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+
+    border: 2px solid #b2beb5;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+
+    z-index: 3;
+}
+
+/* HOVER EFFECT */
+.glow-profile:hover::before,
+.glow-profile:hover::after {
+    opacity: 1;
+}
+
+.glow-profile::before {
+    animation: pulseGlow 3s linear infinite;
+}
+
+@keyframes pulseGlow {
+    0% {
+        filter: blur(8px);
+        opacity: 0.6;
+    }
+    50% {
+        filter: blur(14px);
+        opacity: 1;
+    }
+    100% {
+        filter: blur(8px);
+        opacity: 0.6;
+    }
+}
+``
+/* ===============================
+   HERO DESCRIPTION + CV BUTTON
+   =============================== */
+
+.hero-description {
+    max-width: 900px;
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+/* CV BUTTON */
+.cv-button {
+    padding: 12px 20px;
+    border-radius: 70px;
+
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    color: white;
+    border: 2px solid #708090;
+    background:  #708090 ;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.cv-button:hover {
+    transform: translateY(-4px);
+    background:  #b2beb5 ;
+    box-shadow:
+        0 0 15px #b2beb5,
+        0 0 35px #708090;
+}
+
+
+/* ===============================
